@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Card</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *{
+        box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ead9be;
+      font-family: 'Lato', sans-serif;
+    }
+
+    .card {
+      width: 360px;
+      background: #ecdab8;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+      overflow: hidden;
+      position: relative;
+    }
+    .heart-btn {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      z-index: 10;
+      width: 42px;
+      height: 42px;
+      background: #fff;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      transition: transform 0.2s ease;
+    }
+    .heart-btn:hover { transform: scale(1.12); }
+    .heart-btn svg { width: 20px; height: 20px; fill: #e05050; }
+
+    .card-image {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-image-placeholder {
+      width: 100%;
+      height: 260px;
+      background: linear-gradient(135deg, #d6cfc4 0%, #bfb8ae 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-size: 14px;
+      letter-spacing: 0.05em;
+    }
+
+    .card-body {
+      padding: 22px 24px 28px;
+    }
+
+    .product-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #00424c;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .price-btn {
+      display: inline-block;
+      background: #1a1a1a;
+      color: #fff;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      margin-bottom: 18px;
+      letter-spacing: 0.03em;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+    .price-btn:hover {
+      background: #333;
+      transform: translateY(-1px);
+    }
+
+    .description {
+      font-size: 0.92rem;
+      color: #555;
+      line-height: 1.65;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <button class="heart-btn" aria-label="Wishlist">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09
+                 C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5
+                 c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+    </button>
+    <img
+      class="card-image"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRvkyeQuTz62MOHFYYrW3qzuWgjMQZk1Xnrg&s"
+      alt="Product"
+      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+    />
+    <div class="card-image-placeholder" style="display:none;">[ Product Image ]</div>
+
+    <div class="card-body">
+      <h2 class="product-name">Product Name</h2>
+      <button class="price-btn">$88.00 USD</button>
+      <p class="description">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Repellat nemo dolore reiciendis officiis, ut voluptatum
+        blanditiis porro numquam, veniam quisquam neque aut at
+        molestiae, assumenda expedita.
+      </p>
+    </div>
+  </div>
+</body>
+</html>

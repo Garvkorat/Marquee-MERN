@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Forms in html</title>
+    <style>
+       
+        input{
+            border: none;
+            outline: none;
+            border-bottom: dotted;
+
+        }
+        
+    </style>html
+</head>
+<body>
+    <h1>Sports Physical Form</h1>
+    <form action="actionPage.html" method="get">
+    <form>
+        <fieldset>
+            <legend>Athlete Information</legend>
+            <ul>
+                <li>
+                    <label for="fname">First Name:</label>
+                    <input type="text" id="fname" name="fname" placeholder="Enter your Name" required/>
+
+                </li>
+                <br>
+                <li>
+                    <label for="School_Team">School/Team:</label>
+                    <input type="text" id="School_Team" name="School_Team" placeholder="Enter your Schoolname" value="Parul University" readonly />
+                </li>
+                </li>
+                <br>
+                <li>
+                    <label for="Tsport">Sport:</label>
+                    <input type="text" id="Tsport" name="Tsport" placeholder="Enter your Sportname"  required/>
+                </li>
+                <br>
+                <li>
+                    <label for="Guider_name">Guider Name/Parent:</label>
+                    <input type="text" id="Guider_name" name="Guider_name" placeholder="Parent or Guider" required/>
+                </li>
+                <br>
+                <li>
+                    <label for="Cnumber">Contact Number:</label>
+                    <input type="text" id="Cnumber" name="Cnumber" placeholder="Enter your Contactnumber" required/>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>Medical History for Athlete</legend>
+            <ul>
+                <li>
+                    
+                       <p> History of concussions:</p>
+                       <input type="radio" name="clussioncon" id="clussioncon-Yes" value="clussioncon-Yes" required >
+                       <label for="clussioncon-Yes">Yes</label>
+                       <input type="radio" name="clussioncon" id="clussioncon-No" value="clussioncon-No" required>
+                       <label for="clussioncon-No">No</label>
+                
+                </li>
+                <br>
+                <li>
+                    <label for="p_surgeries">Previous surgeries:</label>
+                    <input type="text" name="p_surgeries" id="P_surgeries" required>
+                </li>
+            
+                <li>
+                    <p>Any bone fractures?:</p>
+                    <input type="radio" name="Any_bone" id="Any_bone-Yes" value="Any_bone-Yes" required>
+                    <label for="Any_bone-Yes">Yes</label>
+                    <input type="radio" name="Any_bone" id="Any_bone-No" value="Any_bone-No" required>
+                    <label for="Any_bone-No">No</label>
+                </li>
+                <li>
+                    <p>Asthma or breathing problems:</p>
+                    <input type="radio" name="A_b" id="A_b-Yes" value="A_b-Yes">
+                    <label for="A_b-Yes">Yes</label>
+                    <input type="radio" name="A_b" id="A_b-No" value="A_b-No">
+                    <label for="A_b-No">No</label>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>Date/Time</legend>
+            <ul>
+                <li>
+                    <label for="dob">DOB:</label>
+                    <input type="date" name="dob" id="db" required />
+                </li>
+                <li>
+                    <label for="time">Time:</label>
+                    <input type="time" name="time" id="TIme" required />
+                </li>
+                <li>
+                    <label for="Date-Time">Date-Time:</label>
+                    <input type="datetime-local" name="Date-time" id="Date-Time" required />
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>Text Area</legend>
+            <ul>
+                <li>
+                    <label>Summery of your last Operation:</label>
+                    <textarea name="" id="Text_Area" rows="5" cols="50" placeholder="Write your summery"></textarea>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>File Input</legend>
+
+           <label for="file"> Drop your last Medical Report:</label>
+
+            <input type="file" name="file" id="file" accept=".pdf,.html" required/>
+        </fieldset>
+        <fieldset>
+            <legend>CheckBox/Select/Number</legend>
+            <ul>
+                <li>
+                    <input type="checkbox" name="terms-condition" id="CheckBox" value="Yes-term-condition" required />
+                    <label for="CheckBox">You have a read this tearms and condition</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="pathlabsReport" id="pathlabsReport" value="Yes-pathlabsReport"/>
+                    <label for="checkBox">Is your reports for pathLabs</label>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>Number Input</legend>
+           <label for="digit">Percentage of HB in body?</label>
+            <input type="number" name="hb-labs" id="digit">
+
+        </fieldset>
+        <fieldset>
+            <legend>Select</legend>
+            <label for="states">Select your state:</label>
+            <select name="states" id="states">
+            <option value="null">--Select your state:</option>
+            <option value="maharashtra">Maharashtra</option>
+            <option value="punjab">Punjab</option>
+            <option value="mumbai">Mumbau</option>
+            <option value="gujarat">Gujarat</option>
+            <option value="chennai">Chennai</option>
+            <option value="tamilnadu">Tamilnadu</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>Fitness Assisment</legend>
+            <table>
+                <tr>
+                    <th></th>
+                </tr>
+            </table>
+            
+
+        </fieldset>
+        <label for="phone">Phone Number</label>
+        <input type="tel" name="P_number" id="P_number" maxlength="10" minlength="10" required />
+        <br>
+        <label for="website">Enter your website</label>
+        <input type="text" name="Web" id="Web" required />
+        <br>
+        <br>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+    
+</body>
+</html>
