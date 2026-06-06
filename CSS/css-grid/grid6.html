@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo Gallery</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #f0f0f0;
+    font-family: Georgia, serif;
+    min-height: 100vh;
+    padding: 30px 20px;
+  }
+
+  h1 {
+    text-align: center;
+    color: #e07020;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+
+  .search-box {
+    display: block;
+    width: 400px;
+    margin: 0 auto 30px auto;
+    padding: 10px 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    background: #fff;
+    outline: none;
+  }
+
+  .search-box:focus {
+    border-color: #e07020;
+  }
+
+  /* ===== GRID LAYOUT ===== */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    gap: 12px;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .photo {
+    overflow: hidden;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .photo img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
+  }
+
+  .photo:hover img {
+    transform: scale(1.05);
+  }
+
+  .photo .label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 8px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .photo:hover .label {
+    opacity: 1;
+  }
+
+  /* Responsive: 2 columns on small screens */
+  @media (max-width: 600px) {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .search-box { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Interactive Photo Gallery</h1>
+
+<input class="search-box" type="text" id="search" placeholder="Search..." oninput="filterPhotos()">
+
+<div class="gallery" id="gallery">
+
+  <div class="photo" data-name="desert">
+    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" alt="Desert">
+    <span class="label">Desert</span>
+  </div>
+
+  <div class="photo" data-name="lake">
+    <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=400&h=300&fit=crop" alt="Lake">
+    <span class="label">Lake</span>
+  </div>
+
+  <div class="photo" data-name="green field">
+    <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=400&h=300&fit=crop" alt="Green Field">
+    <span class="label">Green Field</span>
+  </div>
+
+  <div class="photo" data-name="glacier">
+    <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=400&h=300&fit=crop" alt="Glacier">
+    <span class="label">Glacier</span>
+  </div>
+
+  <div class="photo" data-name="canyon">
+    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&h=300&fit=crop" alt="Canyon">
+    <span class="label">Canyon</span>
+  </div>
+
+  <div class="photo" data-name="garden">
+    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop" alt="Garden">
+    <span class="label">Garden</span>
+  </div>
+
+  <div class="photo" data-name="valley">
+    <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=400&h=300&fit=crop" alt="Valley">
+    <span class="label">Valley</span>
+  </div>
+
+  <div class="photo" data-name="beach sand">
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop" alt="Beach">
+    <span class="label">Beach</span>
+  </div>
+
+  <div class="photo" data-name="forest path">
+    <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=400&h=300&fit=crop" alt="Forest">
+    <span class="label">Forest</span>
+  </div>
+
+  <div class="photo" data-name="sunset river">
+    <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=400&h=300&fit=crop" alt="Sunset">
+    <span class="label">Sunset</span>
+  </div>
+
+  <div class="photo" data-name="cave">
+    <img src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=400&h=300&fit=crop" alt="Cave">
+    <span class="label">Cave</span>
+  </div>
+
+  <div class="photo" data-name="mountain snow">
+    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&h=300&fit=crop" alt="Mountain">
+    <span class="label">Mountain</span>
+  </div>
+
+</div>
+
+<script>
+  function filterPhotos() {
+    const query = document.getElementById('search').value.toLowerCase();
+    const photos = document.querySelectorAll('.photo');
+    photos.forEach(p => {
+      const name = p.getAttribute('data-name');
+      p.style.display = name.includes(query) ? 'block' : 'none';
+    });
+  }
+</script>
+
+</body>
+</html>
