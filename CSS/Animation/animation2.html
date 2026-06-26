@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Traffic Signal</title>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #1a1a2e;
+    }
+
+    .signal-box {
+      width: 120px;
+      background: #2a2a2a;
+      border-radius: 20px;
+      border: 3px solid #444;
+      padding: 20px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .light {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: #111;
+      border: 3px solid #333;
+    }
+
+    .red    { animation: blinkRed    9s infinite; }
+    .yellow { animation: blinkYellow 9s infinite; }
+    .green  { animation: blinkGreen  9s infinite; }
+
+    @keyframes blinkRed {
+      0%,  33% { background: #ff3b30; box-shadow: 0 0 20px #ff3b30; }
+      34%,100% { background: #111; box-shadow: none; }
+    }
+
+    @keyframes blinkYellow {
+      0%,  66% { background: #111; box-shadow: none; }
+      67%, 88% { background: #ffcc00; box-shadow: 0 0 20px #ffcc00; }
+      89%,100% { background: #111; box-shadow: none; }
+    }
+
+    @keyframes blinkGreen {
+      0%,  33% { background: #111; box-shadow: none; }
+      34%, 66% { background: #34c759; box-shadow: 0 0 20px #34c759; }
+      67%,100% { background: #111; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="signal-box">
+    <div class="light red"></div>
+    <div class="light yellow"></div>
+    <div class="light green"></div>
+  </div>
+
+</body>
+</html>

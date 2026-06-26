@@ -1,0 +1,132 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#ffffff;
+}
+
+.container{
+    width:410px;
+    height:600px;
+    background:linear-gradient(135deg,#472381,#9a78d8);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.card{
+    width:300px;
+    background:#fff;
+    border-radius:18px;
+    box-shadow:0 15px 30px rgba(0,0,0,.18);
+    text-align:center;
+    position:relative;
+    padding-top:170px;
+    padding-bottom:35px;
+}
+
+.profile-img{
+    position:absolute;
+    top:-35px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.profile-img img{
+    width:180px;
+    height:180px;
+    border-radius:18px;
+    object-fit:cover;
+    box-shadow:0 15px 25px rgba(0,0,0,.35);
+}
+
+.content h2{
+    font-size:28px;
+    color:#444;
+    margin-bottom:8px;
+}
+
+.job{
+    color:#9c9c9c;
+    font-size:16px;
+    margin-bottom:30px;
+}
+
+.stats{
+    display:flex;
+    justify-content:space-around;
+    margin:25px 20px;
+}
+
+.stat h3{
+    color:#333;
+    font-size:24px;
+}
+
+.stat span{
+    display:block;
+    margin-top:8px;
+    color:#888;
+    font-size:15px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    margin-top:30px;
+}
+
+button{
+    width:110px;
+    height:42px;
+    border:none;
+    border-radius:5px;
+    font-size:15px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.follow{
+    background:#6a2cc8;
+    color:#fff;
+}
+
+.follow:hover{
+    background:#551cb1;
+}
+
+.message{
+    background:#cfcfcf;
+    color:#fff;
+}
+
+.message:hover{
+    background:#b7b7b7;
+}
+
+/* Green Blinking Dot */
+.green-dot{
+    position:absolute;
+    top:-8px;
+    right:-8px;
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    border:3px solid white;
+    animation:blink 1.2s infinite;
+}
+
+@keyframes blink{
+    0%  { background:#14532d; }
+    50% { background:#4ade80; }
+    100%{ background:#14532d; }
+}

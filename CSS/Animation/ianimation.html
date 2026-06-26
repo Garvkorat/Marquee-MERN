@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+        body{
+            height: 100%;
+        }
+        .main{
+            display: flex;
+            height: 100vh;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        #Box{
+            height:400px;
+            width: 400px;
+            background-color: red;
+            transition-property: all;
+            transition-duration: 1s;
+            transition-delay: 0s;
+            /* transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); */
+            color: rgb(209, 241, 5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: xx-large;
+            font-family: 'Times New Roman', Times, serif;
+            font-display: swap;
+        }
+        #Box:hover{
+            background-color: black;
+            height: 200px;
+            width: 200px;
+            border: 5px solid blanchedalmond;
+        }
+        #rectangle{
+            height: 150px;
+            width: 300px;
+            background-color: rgb(168, 207, 194);
+            border: 2px solid black;
+            transition: all 0.8s ease-in-out;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            font-size: xx-large;
+        }
+        #rectangle:hover{
+            width: 200px;
+            background-color: rgb(227, 134, 20);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+    <!-- <div id="Box">G.k</div> -->
+    <div id="rectangle">Hover to see<br>
+the transition
+    </div>
+    </div>
+</body>
+</html>
